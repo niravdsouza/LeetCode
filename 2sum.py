@@ -17,11 +17,15 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+        #Created a dictionary
         test={}
+        
+        #Iterate over elements in the array
         for i,num in enumerate(nums):
             if num in test:
                 num1=i
                 num2=test[num]
+                break
             test[target-num]=i
         
         return [num2,num1]
