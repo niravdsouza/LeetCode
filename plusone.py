@@ -7,18 +7,15 @@ The digits are stored such that the most significant digit is at the head of the
 """
 class Solution(object):
     def plusOne(self, digits):
-        """
-        :type digits: List[int]
-        :rtype: List[int]
-        """
-        temp=1
-        for i in range(len(digits)-1,-1,-1):
-            print i
-            digits[i]+=temp
-            temp=0
-            if digits[i]==10:
-                digits[i]=0
-                temp=1
-        if temp==1:
-            digits=[1]+digits
+        carry = 1
+        for itrn in range(len(digits)-1,-1,-1):
+            if digits[itrn] == 9:
+                digits[itrn]=0
+                carry = 1
+            else: 
+                digits[itrn]+=1
+                carry = 0
+                break
+        if carry == 1:
+            digits.insert(0,1)
         return digits
