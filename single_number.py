@@ -13,3 +13,10 @@ class Solution(object):
                 del(numbers[num])
         return numbers.keys()[0]
         
+class Solution(object):
+    def singleNumber(self, nums):
+        i = 0
+        for num in nums:
+            i ^= num
+        return i
+        
